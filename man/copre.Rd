@@ -18,7 +18,7 @@ copre(
 )
 }
 \arguments{
-\item{data}{The from which to sample predictive distributions.}
+\item{data}{The data from which to sample predictive distributions.}
 
 \item{N}{The number of unobserved data points to resample for each chain.}
 

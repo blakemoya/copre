@@ -5,6 +5,7 @@
 \alias{[[.grideval_result}
 \alias{grideval}
 \alias{grideval.copre_result}
+\alias{grideval.seqre_result}
 \alias{grideval.mdpolya_result}
 \title{Grid evaluation of \code{copre_result} and \code{mdpolya_result} objects}
 \usage{
@@ -15,6 +16,8 @@
 grideval(obj, grd = NULL, func = "density", nthreads = 1)
 
 \method{grideval}{copre_result}(obj, grd = NULL, func = "density", nthreads = 1)
+
+\method{grideval}{seqre_result}(obj, grd = NULL, func = "density", nthreads = 1)
 
 \method{grideval}{mdpolya_result}(obj, grd = NULL, func = "density", nthreads = 1)
 }
@@ -47,6 +50,9 @@ Grid evaluation of \code{copre_result} and \code{mdpolya_result} objects
 \section{Methods (by class)}{
 \itemize{
 \item \code{grideval(copre_result)}: Grid evaluation method for \code{copre_result} objects.
+
+\item \code{grideval(seqre_result)}: Grid evaluation method for \code{seqre_result}
+objects.
 
 \item \code{grideval(mdpolya_result)}: Grid evaluation method for \code{mdpolya_result}
 objects.

@@ -4,7 +4,7 @@
 \alias{polya}
 \alias{polya.mdp}
 \alias{polya.dirichletprocess}
-\title{Polya Completion for Marginal MDP Samples}
+\title{Polya Completion for Marginal Exchangeable Sequence Samples}
 \usage{
 polya(res_mdp, epsilon = 0.01, upsilon = 0.01, nthreads = 1)
 
@@ -13,12 +13,13 @@ polya(res_mdp, epsilon = 0.01, upsilon = 0.01, nthreads = 1)
 \method{polya}{dirichletprocess}(res_mdp, epsilon = 0.01, upsilon = 0.01, nthreads = 1)
 }
 \arguments{
-\item{res_mdp}{Samples from a marginal MDP model.}
+\item{res_mdp}{Samples from a marginal exchangeable sequence model.}
 
 \item{epsilon}{The desired maximum weight associated with the final remainder
 component.}
 
-\item{upsilon}{The portion of samples which do not meet the desired epsilon.}
+\item{upsilon}{The portion of samples which will not meet the desired
+epsilon.}
 
 \item{nthreads}{UNSTABLE: The number of parallel threads to launch with
 OpenMP, not recommended due to induced instability.}
@@ -31,7 +32,7 @@ If \code{res_mdp} was an \code{mdpolya_result} object, returns
   object with new components and altered weights.
 }
 \description{
-Polya Completion for Marginal MDP Samples
+Polya Completion for Marginal Exchangeable Sequence Samples
 }
 \section{Methods (by class)}{
 \itemize{

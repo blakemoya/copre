@@ -17,6 +17,10 @@ polyaurn_cpp <- function(theta, hyper, eps, ups, nthreads) {
     .Call('_copre_polyaurn_cpp', PACKAGE = 'copre', theta, hyper, eps, ups, nthreads)
 }
 
+mpy_cpp <- function(y, k, d, alpha, mu, tau, s, S, c, C, a, A, w, W, fix_a, fix_m, fix_t, burn, thin) {
+    .Call('_copre_mpy_cpp', PACKAGE = 'copre', y, k, d, alpha, mu, tau, s, S, c, C, a, A, w, W, fix_a, fix_m, fix_t, burn, thin)
+}
+
 polyaurngen_cpp <- function(theta, alpha, eps, ups, nthreads) {
     .Call('_copre_polyaurngen_cpp', PACKAGE = 'copre', theta, alpha, eps, ups, nthreads)
 }

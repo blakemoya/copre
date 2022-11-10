@@ -82,6 +82,35 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// mpy_cpp
+Rcpp::List mpy_cpp(arma::vec y, arma::uword k, double d, double alpha, double mu, double tau, double s, double S, double c, double C, double a, double A, double w, double W, bool fix_a, bool fix_m, bool fix_t, arma::uword burn, arma::uword thin);
+RcppExport SEXP _copre_mpy_cpp(SEXP ySEXP, SEXP kSEXP, SEXP dSEXP, SEXP alphaSEXP, SEXP muSEXP, SEXP tauSEXP, SEXP sSEXP, SEXP SSEXP, SEXP cSEXP, SEXP CSEXP, SEXP aSEXP, SEXP ASEXP, SEXP wSEXP, SEXP WSEXP, SEXP fix_aSEXP, SEXP fix_mSEXP, SEXP fix_tSEXP, SEXP burnSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type k(kSEXP);
+    Rcpp::traits::input_parameter< double >::type d(dSEXP);
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    Rcpp::traits::input_parameter< double >::type S(SSEXP);
+    Rcpp::traits::input_parameter< double >::type c(cSEXP);
+    Rcpp::traits::input_parameter< double >::type C(CSEXP);
+    Rcpp::traits::input_parameter< double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< double >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type w(wSEXP);
+    Rcpp::traits::input_parameter< double >::type W(WSEXP);
+    Rcpp::traits::input_parameter< bool >::type fix_a(fix_aSEXP);
+    Rcpp::traits::input_parameter< bool >::type fix_m(fix_mSEXP);
+    Rcpp::traits::input_parameter< bool >::type fix_t(fix_tSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type burn(burnSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(mpy_cpp(y, k, d, alpha, mu, tau, s, S, c, C, a, A, w, W, fix_a, fix_m, fix_t, burn, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
 // polyaurngen_cpp
 Rcpp::List polyaurngen_cpp(arma::umat theta, arma::vec alpha, double eps, double ups, arma::uword nthreads);
 RcppExport SEXP _copre_polyaurngen_cpp(SEXP thetaSEXP, SEXP alphaSEXP, SEXP epsSEXP, SEXP upsSEXP, SEXP nthreadsSEXP) {
@@ -117,6 +146,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_copre_copre_cpp", (DL_FUNC) &_copre_copre_cpp, 8},
     {"_copre_mdp_cpp", (DL_FUNC) &_copre_mdp_cpp, 18},
     {"_copre_polyaurn_cpp", (DL_FUNC) &_copre_polyaurn_cpp, 5},
+    {"_copre_mpy_cpp", (DL_FUNC) &_copre_mpy_cpp, 19},
     {"_copre_polyaurngen_cpp", (DL_FUNC) &_copre_polyaurngen_cpp, 5},
     {"_copre_evalmdpolya_cpp", (DL_FUNC) &_copre_evalmdpolya_cpp, 4},
     {NULL, NULL, 0}

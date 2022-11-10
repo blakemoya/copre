@@ -1,9 +1,10 @@
-#' Polya Completion for Marginal MDP Samples
+#' Polya Completion for Marginal Exchangeable Sequence Samples
 #'
-#' @param res_mdp Samples from a marginal MDP model.
+#' @param res_mdp Samples from a marginal exchangeable sequence model.
 #' @param epsilon The desired maximum weight associated with the final remainder
 #'   component.
-#' @param upsilon The portion of samples which do not meet the desired epsilon.
+#' @param upsilon The portion of samples which will not meet the desired
+#'   epsilon.
 #' @param nthreads UNSTABLE: The number of parallel threads to launch with
 #'   OpenMP, not recommended due to induced instability.
 #'

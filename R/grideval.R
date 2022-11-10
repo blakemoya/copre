@@ -56,6 +56,24 @@ grideval.copre_result <- function(obj, grd = NULL, func = 'density',
   return(out)
 }
 
+#' @describeIn grideval Grid evaluation method for \code{seqre_result}
+#'  objects.
+#' @export
+grideval.seqre_result <- function(obj, grd = NULL, func = 'density',
+                                  nthreads = 1) {
+  if (is.null(grd)) {
+    r_x <- range(obj$args$data)
+    rr_x <- diff(r_x) / 10
+    grd <- seq(r_x[1] - rr_x, r_x[2] + rr_x, length = 1000)
+  }
+  out <- obj$args$b_msr$eval(obj$phi, grd, func, nthreads)
+  attr(out, 'func') <- func
+  attr(out, 'grid') <- grd
+  attr(out, 'args') <- obj$args
+  class(out) <- 'grideval_result'
+  return(out)
+}
+
 #' @describeIn grideval Grid evaluation method for \code{mdpolya_result}
 #'  objects.
 #' @export

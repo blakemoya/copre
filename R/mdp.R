@@ -68,7 +68,7 @@ mdp <- function(data, k, alpha = 1, mu = 21, tau = 25, s = 4, S = 2,
     mat <- matrix(c(z_w, t[z_uq, 'mean'], t[z_uq, 'var']), ncol = 3)
     colnames(mat) <- c('w', 'mean', 'var')
     return(mat)
-  })
+  }, simplify =  FALSE)
   out$phi <- phi
   class(out) <- c('mdpolya_result', 'mdp')
   return(out)

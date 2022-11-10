@@ -13,6 +13,21 @@ plot.copre_result <- function(x, ..., func = 'density', confint = NULL) {
   plot.grideval_result(grideval(x, func = func), confint = confint)
 }
 
+#' SeqRe Result Plotter
+#'
+#' @param x A \code{seqre_result} object.
+#' @param ... Additional arguments discarded from \code{plot}.
+#' @param func Either 'distribution', 'density', or 'gradient'.
+#' @param confint A decimal value indicating the confidence interval width (e.g.
+#'   0.95 for a 95% confidence interval). Defaults to \code{NULL}, in which case
+#'   no confidence intervals will be drawn.
+#'
+#' @return A \code{ggplot} object.
+#' @export
+plot.seqre_result <- function(x, ..., func = 'density', confint = NULL) {
+  plot.grideval_result(grideval(x, func = func), confint = confint)
+}
+
 #' Plotting method for \code{mdpolya_result} objects
 #'
 #' @param x An \code{mdpolya_result} object, substituting \code{obj}.
