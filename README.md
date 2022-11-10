@@ -37,6 +37,7 @@ samples to draw:
 
 ``` r
 library(copre)
+#> CopRe v0.1.0: OpenMP disabled
 data <- c(rnorm(100, mean = -2), rnorm(100, mean = 2))
 res_cop <- copre(data, 100, 100)
 plot(res_cop) +
