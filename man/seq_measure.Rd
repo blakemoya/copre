@@ -4,7 +4,7 @@
 \alias{seq_measure}
 \title{Sequence Measure for Species Sampling Models}
 \usage{
-seq_measure(pars, Pn, Po, rnext = NULL)
+seq_measure(pars, Pn, Po)
 }
 \arguments{
 \item{pars}{A list of hyperparameters used in \code{Pn} and \code{Po}.}
@@ -16,9 +16,6 @@ sequence having a new value.}
 \item{Po}{A function on a sequence length \code{n}, a number of unique values
 \code{k}, and the number of values equal to j \code{kj} that returns the
 probability of the next member in the sequence having the value j.}
-
-\item{rnext}{An optional optimized generating function. If \code{NULL}, one
-will be generate from \code{Pn} and \code{Po}.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
@@ -28,5 +25,5 @@ A \code{seq_measure} object for use in the exchangeable sequence
 Sequence Measure for Species Sampling Models
 }
 \seealso{
-{[exseqre()]}
+{[seqre()]}
 }
