@@ -41,7 +41,7 @@ plot.seqre_result <- function(x, ..., func = 'density', confint = NULL) {
 #' @export
 plot.mdpolya_result <- function(x, ..., grd = NULL, func = 'density',
                                 confint = NULL, nthreads = 1) {
-  plot(grideval(x, grd, func, nthreads), confint)
+  plot.grideval_result(grideval(x, grd, func, nthreads), confint = confint)
 }
 
 #' Plotting method for \code{grideval_result} objects
