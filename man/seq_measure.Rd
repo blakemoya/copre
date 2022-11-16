@@ -4,10 +4,15 @@
 \alias{seq_measure}
 \title{Sequence Measure for Species Sampling Models}
 \usage{
-seq_measure(pars, Pn, Po)
+seq_measure(idx, pars, hpars, Pn, Po)
 }
 \arguments{
-\item{pars}{A list of hyperparameters used in \code{Pn} and \code{Po}.}
+\item{idx}{A unique index for the sequence measure.}
+
+\item{pars}{A list of parameters used in \code{Pn} and \code{Po} to generate
+a sequence.}
+
+\item{hpars}{A list of hyperparameters used to generate \code{pars}.}
 
 \item{Pn}{A function on a sequence length \code{n} and a number of unique
 values \code{k} that returns the probability of the next member in the

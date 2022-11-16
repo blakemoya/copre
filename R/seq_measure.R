@@ -1,6 +1,9 @@
 #' Sequence Measure for Species Sampling Models
 #'
-#' @param pars A list of hyperparameters used in \code{Pn} and \code{Po}.
+#' @param idx A unique index for the sequence measure.
+#' @param pars A list of parameters used in \code{Pn} and \code{Po} to generate
+#'  a sequence.
+#' @param hpars A list of hyperparameters used to generate \code{pars}.
 #' @param Pn A function on a sequence length \code{n} and a number of unique
 #'  values \code{k} that returns the probability of the next member in the
 #'  sequence having a new value.
@@ -11,9 +14,8 @@
 #' @return A \code{seq_measure} object for use in the exchangeable sequence
 #'  resampling scheme for mixtures.
 #' @seealso {[seqre()]}
-#' @export
-seq_measure <- function(pars, Pn, Po) {
-  obj <- list(pars = pars, Pn = Pn, Po = Po)
+seq_measure <- function(idx, pars, hpars, Pn, Po) {
+  obj <- list(idx = idx, pars = pars, hpars = hpars, Pn = Pn, Po = Po)
   pnext <- function(z) {
     if (is.null(z) | !is.numeric(z)) {
       stop('`z` must be numeric.')
@@ -67,11 +69,37 @@ seq_measure <- function(pars, Pn, Po) {
   return(obj)
 }
 
-#' A Pitman-Yor Sequence Measure.
+#' Dirichlet Sequence Measure.
 #'
-#' @param sigma The discount parameter for the Pitman-Yor process. Must be less
+#' @param alpha The concentration parameter for the Dirichlet process. Must be
+#'  greater than 0.
+#' @param c The prior primary shape parameter for \code{alpha}.
+#' @param C The prior secondary shape parameter for \code{alpha}.
+#' @param fix_m A logical value indicating whether or not \code{alpha} should be
+#'  fixed.
+#'
+#' @return A \code{seq_measure} object for use in the exchangeable sequence
+#'  resampling scheme for mixtures.
+#' @seealso [seq_measure()], [seqre()]
+#' @export
+Sq_dirichlet <- function(alpha, c = 1, C = 1, fix_a = TRUE) {
+  if (alpha <= 0) {
+    stop('`alpha` must be positive.')
+  }
+  Pn <- function(n, k) {
+    alpha / (alpha + n)
+  }
+  Po <- function(n, k, kj) {
+    kj / (alpha + n)
+  }
+  return(seq_measure(0, alpha, c(c = c, C = C, fix_a = fix_a), Pn, Po))
+}
+
+#' Pitman-Yor Sequence Measure.
+#'
+#' @param d The discount parameter for the Pitman-Yor process. Must be less
 #'  than 1.
-#' @param theta The concentration parameter for the Pitman-Yor process. Must be
+#' @param alpha The concentration parameter for the Pitman-Yor process. Must be
 #'  greater than -\code{sigma} if \code{sigma} is in [0, 1), else ignored.
 #' @param m A positive integer used to set \code{theta = m * abs(sigma)} if
 #'  \code{sigma} is negative.
@@ -80,24 +108,24 @@ seq_measure <- function(pars, Pn, Po) {
 #'  resampling scheme for mixtures.
 #' @seealso [seq_measure()], [seqre()]
 #' @export
-Sq_pitmanyor <- function(sigma, theta = 1, m = 1L) {
-  if (sigma < 0) {
+Sq_pitmanyor <- function(d, alpha = 1, m = 1L) {
+  if (d < 0) {
     if (m < 0 | !is.integer(m)) {
       stop('`m` must be a positive integer. Remember to add `L` after the
            numeric value.')
     }
-    theta <- m * abs(sigma)
+    alpha <- m * abs(d)
   }
   Pn <- function(n, k) {
-    (theta + sigma * k) / (theta + n)
+    (alpha + d * k) / (alpha + n)
   }
   Po <- function(n, k, kj) {
-    (kj - sigma)  / (theta + n)
+    (kj - d)  / (alpha + n)
   }
-  return(seq_measure(gamma, Pn, Po))
+  return(seq_measure(1, c(d = d, alpha = alpha), 0, Pn, Po))
 }
 
-#' A Collapsed Gnedin Process Sequence Measure.
+#' Collapsed Gnedin Process Sequence Measure.
 #'
 #' @param gamma The gamma parameter for the Gnedin process with xi set to 0.
 #'  Bounded to \code{[0, 1]}.
@@ -113,5 +141,5 @@ Sq_gnedin0 <- function(gamma) {
   Po <- function(n, k, kj) {
     (gamma + n - k) / (n * (gamma + n)) * (kj + 1)
   }
-  return(seq_measure(gamma, Pn, Po))
+  return(seq_measure(2, c(gamma = gamma), 0, Pn, Po))
 }

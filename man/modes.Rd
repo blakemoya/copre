@@ -3,6 +3,7 @@
 \name{modes}
 \alias{modes}
 \alias{modes.mdpolya_result}
+\alias{modes.seqre_result}
 \alias{modes.grideval_result}
 \alias{n_modes}
 \title{Mode Extractor}
@@ -10,6 +11,8 @@
 modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
 
 \method{modes}{mdpolya_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
+
+\method{modes}{seqre_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
 
 \method{modes}{grideval_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
 
@@ -37,6 +40,8 @@ Extracts the modes from a \code{copre_result} or
 \section{Methods (by class)}{
 \itemize{
 \item \code{modes(mdpolya_result)}: Mode-counting method for \code{mdpolya_result} objects.
+
+\item \code{modes(seqre_result)}: Mode-counting method for \code{seqre_result} objects.
 
 \item \code{modes(grideval_result)}: Mode-counting method for \code{grideval_result} objects.
 

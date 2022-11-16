@@ -1,5 +1,5 @@
-#ifndef __BASE__
-#define __BASE__
+#ifndef __BASE0__
+#define __BASE0__
 
 #include <RcppArmadillo.h>
 

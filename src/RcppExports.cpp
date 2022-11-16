@@ -140,6 +140,48 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// marg_cpp
+Rcpp::List marg_cpp(arma::vec y, arma::uword k, arma::uvec z0, arma::uword bas_idx, arma::vec bas_pars, arma::vec bas_hpars, arma::uword seq_idx, arma::vec seq_pars, arma::vec seq_hpars, arma::uword burn, arma::uword thin);
+RcppExport SEXP _copre_marg_cpp(SEXP ySEXP, SEXP kSEXP, SEXP z0SEXP, SEXP bas_idxSEXP, SEXP bas_parsSEXP, SEXP bas_hparsSEXP, SEXP seq_idxSEXP, SEXP seq_parsSEXP, SEXP seq_hparsSEXP, SEXP burnSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::uvec >::type z0(z0SEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type bas_idx(bas_idxSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type bas_pars(bas_parsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type bas_hpars(bas_hparsSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type seq_idx(seq_idxSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type seq_pars(seq_parsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type seq_hpars(seq_hparsSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type burn(burnSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(marg_cpp(y, k, z0, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, burn, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// seqre_cpp
+Rcpp::List seqre_cpp(Rcpp::List phi, arma::uword n, arma::uword bas_idx, arma::vec bas_pars, arma::vec bas_hpars, arma::uword seq_idx, arma::vec seq_pars, arma::vec seq_hpars, double eps, arma::uword inc, arma::uword max_it);
+RcppExport SEXP _copre_seqre_cpp(SEXP phiSEXP, SEXP nSEXP, SEXP bas_idxSEXP, SEXP bas_parsSEXP, SEXP bas_hparsSEXP, SEXP seq_idxSEXP, SEXP seq_parsSEXP, SEXP seq_hparsSEXP, SEXP epsSEXP, SEXP incSEXP, SEXP max_itSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type phi(phiSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type bas_idx(bas_idxSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type bas_pars(bas_parsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type bas_hpars(bas_hparsSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type seq_idx(seq_idxSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type seq_pars(seq_parsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type seq_hpars(seq_hparsSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type inc(incSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type max_it(max_itSEXP);
+    rcpp_result_gen = Rcpp::wrap(seqre_cpp(phi, n, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, eps, inc, max_it));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_copre_chk_omp", (DL_FUNC) &_copre_chk_omp, 0},
@@ -149,6 +191,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_copre_mpy_cpp", (DL_FUNC) &_copre_mpy_cpp, 19},
     {"_copre_polyaurngen_cpp", (DL_FUNC) &_copre_polyaurngen_cpp, 5},
     {"_copre_evalmdpolya_cpp", (DL_FUNC) &_copre_evalmdpolya_cpp, 4},
+    {"_copre_marg_cpp", (DL_FUNC) &_copre_marg_cpp, 11},
+    {"_copre_seqre_cpp", (DL_FUNC) &_copre_seqre_cpp, 11},
     {NULL, NULL, 0}
 };
 

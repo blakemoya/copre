@@ -4,20 +4,16 @@
 \alias{base_measure}
 \title{Base Measure for Mixture Models}
 \usage{
-base_measure(pars, G, q0, q, eval)
+base_measure(idx, dim, pars, hpars, eval)
 }
 \arguments{
-\item{pars}{A list of hyperparameters used in \code{G}.}
+\item{idx}{A unique index for the base measure.}
 
-\item{G}{A function which generates mixture component parameters from the
-conditional posterior given data \code{y}, or generates from the prior if
-\code{y} is empty or \code{NULL}.}
+\item{dim}{A dimension for the support of the base measure.}
 
-\item{q0}{A marginal likelihood function on \code{y} using the values in
-\code{pars} (hard-coded, not as an argument).}
+\item{pars}{A list of parameters used to generate mixture components.}
 
-\item{q}{A likelihood function on \code{y} given \code{theta}, a mixture
-component parameter drawn from \code{G}.}
+\item{hpars}{A list of hyperparameters used to generate \code{pars}.}
 
 \item{eval}{An evaluation function taking \code{phi}, a list of mixture,
 matrices as in \code{mdp()}, \code{grd}, a grid vector, \code{f}, a
@@ -26,8 +22,8 @@ distribution function, and \code{nthreads}, a number of threads to utilize
 for parallel execution.}
 }
 \value{
-A \code{base_measure} object for use in the exchangeable sequence
- resampling scheme for mixtures.
+A \code{base_measure} object for use in the sequence resampling
+ scheme for mixtures.
 }
 \description{
 A structure for wrapping base measures as in Escobar and West
@@ -39,8 +35,7 @@ A structure for wrapping base measures as in Escobar and West
  Inference Using Mixtures. Journal of the American Statistical Association.
  DOI: \doi{10.1080/01621459.1995.10476550}
  }
- @export
 }
 \seealso{
-{[exseqre()]}
+{[seqre()]}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/seq_measure.R
 \name{Sq_gnedin0}
 \alias{Sq_gnedin0}
-\title{A Collapsed Gnedin Process Sequence Measure.}
+\title{Collapsed Gnedin Process Sequence Measure.}
 \usage{
 Sq_gnedin0(gamma)
 }
@@ -15,7 +15,7 @@ A \code{seq_measure} object for use in the exchangeable sequence
  resampling scheme for mixtures.
 }
 \description{
-A Collapsed Gnedin Process Sequence Measure.
+Collapsed Gnedin Process Sequence Measure.
 }
 \seealso{
 {[seq_measure(), exseqre()]}

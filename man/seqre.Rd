@@ -4,25 +4,47 @@
 \alias{seqre}
 \title{Sequence Resampling}
 \usage{
-seqre(data, k, s_msr, b_msr, marg = FALSE, burn = 1000, thin = 150)
+seqre(
+  data,
+  k,
+  b_msr,
+  s_msr,
+  keep_marg = FALSE,
+  burn = 1000,
+  thin = 150,
+  inc = 1000,
+  eps = 0.01,
+  max_it = 100
+)
 }
 \arguments{
 \item{data}{The data from which to sample predictive distributions.}
 
 \item{k}{The number of predictive samples to draw.}
 
+\item{b_msr}{A \code{base_measure} object.}
+
 \item{s_msr}{A \code{seq_measure} object.}
 
-\item{b_msr}{A univariate \code{base_measure} object.}
+\item{keep_marg}{A logical value indicating whether or not to keep the
+results from the marginal MCMC sampler.}
 
 \item{burn}{The number of initial sampling iterations to discard, will be
 truncated if a non-integer.}
 
 \item{thin}{The number of sampling iterations to discard between records,
 will be truncated if a non-integer.}
+
+\item{inc}{A positive integer increment value for the number of predictive
+samples to take each convergence check.}
+
+\item{eps}{An error value which determines the convergence approximation.}
+
+\item{max_it}{A positive integer maximum number of iterations before halting.}
 }
 \value{
-A \code{unimplemented} object.
+A \code{seqre_result} object, or a list of two \code{seqre_result}
+ objects if \code{keep_marg} is \code{TRUE}.
 }
 \description{
 A function that samples predictive distributions for univariate

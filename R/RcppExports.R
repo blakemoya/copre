@@ -29,3 +29,11 @@ evalmdpolya_cpp <- function(mdpolya, x, f, nthreads) {
     .Call('_copre_evalmdpolya_cpp', PACKAGE = 'copre', mdpolya, x, f, nthreads)
 }
 
+marg_cpp <- function(y, k, z0, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, burn, thin) {
+    .Call('_copre_marg_cpp', PACKAGE = 'copre', y, k, z0, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, burn, thin)
+}
+
+seqre_cpp <- function(phi, n, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, eps, inc, max_it) {
+    .Call('_copre_seqre_cpp', PACKAGE = 'copre', phi, n, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, eps, inc, max_it)
+}
+

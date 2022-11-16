@@ -23,6 +23,12 @@ modes.mdpolya_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   modes(grideval(obj, grd = grd, func = 'density'), mean = mean, anti = anti)
 }
 
+#' @describeIn modes Mode-counting method for \code{seqre_result} objects.
+#' @export
+modes.seqre_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
+  modes(grideval(obj, grd = grd, func = 'density'), mean = mean, anti = anti)
+}
+
 #' @describeIn modes Mode-counting method for \code{grideval_result} objects.
 #' @export
 modes.grideval_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
@@ -41,7 +47,7 @@ modes.grideval_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   if (mean) {
     return(f(apply(obj, 2, mean)))
   } else {
-    return(apply(obj, 1, f))
+    return(apply(obj, 1, f, simplify = FALSE))
   }
 }
 
