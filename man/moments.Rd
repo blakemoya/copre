@@ -2,13 +2,13 @@
 % Please edit documentation in R/moments.R
 \name{moments}
 \alias{moments}
-\alias{moments.mdpolya_result}
+\alias{moments.seqre_result}
 \alias{moments.grideval_result}
 \title{Moment calculation generic function}
 \usage{
 moments(obj, mom, cntrl = TRUE, grd = NULL)
 
-\method{moments}{mdpolya_result}(obj, mom, cntrl = TRUE, grd = NULL)
+\method{moments}{seqre_result}(obj, mom, cntrl = TRUE, grd = NULL)
 
 \method{moments}{grideval_result}(obj, mom, cntrl = TRUE, grd = NULL)
 }
@@ -21,18 +21,18 @@ moments(obj, mom, cntrl = TRUE, grd = NULL)
 or not. Defaults to \code{TRUE}.}
 
 \item{grd}{A numeric vector of grid values on which the density function
-samples in `obj` should be calculated for trapezoidal integration.}
+samples in \code{obj} should be calculated for trapezoidal integration.}
 }
 \value{
 A vector of moment values for each sampled distribution in
-  \code{obj}.
+\code{obj}.
 }
 \description{
 Moment calculation generic function
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{moments(mdpolya_result)}: Moment calculation method for \code{mdpolya_result}
+\item \code{moments(seqre_result)}: Moment calculation method for \code{seqre_result}
 objects.
 
 \item \code{moments(grideval_result)}: Moment calculation method for \code{grideval_result}

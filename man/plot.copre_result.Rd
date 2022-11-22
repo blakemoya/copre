@@ -14,7 +14,7 @@
 \item{func}{Either 'distribution', 'density', or 'gradient'.}
 
 \item{confint}{A decimal value indicating the confidence interval width (e.g.
-0.95 for a 95% confidence interval). Defaults to \code{NULL}, in which case
+0.95 for a 95\% confidence interval). Defaults to \code{NULL}, in which case
 no confidence intervals will be drawn.}
 }
 \value{

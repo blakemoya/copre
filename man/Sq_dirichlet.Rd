@@ -4,7 +4,7 @@
 \alias{Sq_dirichlet}
 \title{Dirichlet Sequence Measure.}
 \usage{
-Sq_dirichlet(alpha, c = 1, C = 1, fix_a = TRUE)
+Sq_dirichlet(alpha = 1, c = NULL, C = NULL)
 }
 \arguments{
 \item{alpha}{The concentration parameter for the Dirichlet process. Must be
@@ -19,11 +19,11 @@ fixed.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
- resampling scheme for mixtures.
+resampling scheme for mixtures.
 }
 \description{
 Dirichlet Sequence Measure.
 }
 \seealso{
-[seq_measure()], [seqre()]
+\code{\link[=seq_measure]{seq_measure()}}, \code{\link[=seqre]{seqre()}}
 }

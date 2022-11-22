@@ -23,7 +23,7 @@ for parallel execution.}
 }
 \value{
 A \code{base_measure} object for use in the sequence resampling
- scheme for mixtures.
+scheme for mixtures.
 }
 \description{
 A structure for wrapping base measures as in Escobar and West
@@ -31,11 +31,11 @@ A structure for wrapping base measures as in Escobar and West
 }
 \references{
 \itemize{
- \item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
- Inference Using Mixtures. Journal of the American Statistical Association.
- DOI: \doi{10.1080/01621459.1995.10476550}
- }
+\item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
+Inference Using Mixtures. Journal of the American Statistical Association.
+DOI: \doi{10.1080/01621459.1995.10476550}
+}
 }
 \seealso{
-{[seqre()]}
+{\code{\link[=seqre]{seqre()}}}
 }

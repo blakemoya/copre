@@ -73,15 +73,17 @@ will be truncated if a non-integer.}
 }
 \value{
 An \code{mdpolya_result} object. A list with four entries:
- * \code{theta}: An array of dimension \code{[k, n, 3]} encoding the
-  component label, mean, and standard deviation for each data point for each
-  iteration. This represents the samples from the Polya posterior
-  distribution of the marginal MDP model.
- * \code{eta}: A matrix of dimension \code{[k, 5]} encoding the
-  hyperparameter values for each iteration.
- * \code{args}: A list of input arguments.
- * \code{phi}: A list of matrices encoding the unique values from
-  \code{theta} and associated weights for each iteration.
+\itemize{
+\item \code{theta}: An array of dimension \code{[k, n, 3]} encoding the
+component label, mean, and standard deviation for each data point for each
+iteration. This represents the samples from the Polya posterior
+distribution of the marginal MDP model.
+\item \code{eta}: A matrix of dimension \code{[k, 5]} encoding the
+hyperparameter values for each iteration.
+\item \code{args}: A list of input arguments.
+\item \code{phi}: A list of matrices encoding the unique values from
+\code{theta} and associated weights for each iteration.
+}
 }
 \description{
 Marginal MPY Sampler
@@ -91,13 +93,13 @@ res_mdp <- mdp(rnorm(50), 10)
 }
 \references{
 \itemize{
- \item Moya B., Walker S. G. (2022). Uncertainty Quantification and the
- Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
- \item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
- Inference Using Mixtures. Journal of the American Statistical Association.
- DOI: \doi{10.1080/01621459.1995.10476550}
+\item Moya B., Walker S. G. (2022). Uncertainty Quantification and the
+Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
+\item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
+Inference Using Mixtures. Journal of the American Statistical Association.
+DOI: \doi{10.1080/01621459.1995.10476550}
 }
 }
 \seealso{
-{[polya()]}
+{\code{\link[=polya]{polya()}}}
 }

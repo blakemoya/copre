@@ -26,10 +26,10 @@ OpenMP, not recommended due to induced instability.}
 }
 \value{
 If \code{res_mdp} was an \code{mdpolya_result} object, returns
-  another \code{mdpolya_result}object with \code{phi}, \code{eta} and
-  \code{args} entries as in [mdp()]. If \code{res_mdp} was a
-  \code{dirichletprocess} object, returns another \code{dirichletprocess}
-  object with new components and altered weights.
+another \code{mdpolya_result}object with \code{phi}, \code{eta} and
+\code{args} entries as in \code{\link[=mdp]{mdp()}}. If \code{res_mdp} was a
+\code{dirichletprocess} object, returns another \code{dirichletprocess}
+object with new components and altered weights.
 }
 \description{
 Polya Completion for Marginal Exchangeable Sequence Samples
@@ -47,5 +47,5 @@ res_pol <- polya(res_mdp, nthreads = 1)
 }
 \references{
 Moya B., Walker S. G. (2022). Uncertainty Quantification and the
- Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
+Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
 }

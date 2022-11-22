@@ -20,16 +20,16 @@ k-means.
 }
 \references{
 \itemize{
- \item Fong, E., Holmes, C., Walker, S. G. (2021). Martingale Posterior
- Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
- \item Moya B., Walker S. G. (2022). Uncertainty Quantification and the
- Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
- \item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
- Inference Using Mixtures. Journal of the American Statistical Association.
- DOI: \doi{10.1080/01621459.1995.10476550}
+\item Fong, E., Holmes, C., Walker, S. G. (2021). Martingale Posterior
+Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
+\item Moya B., Walker S. G. (2022). Uncertainty Quantification and the
+Marginal MDP Model. arXiv. DOI: \doi{10.48550/arxiv.2206.08418}
+\item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
+Inference Using Mixtures. Journal of the American Statistical Association.
+DOI: \doi{10.1080/01621459.1995.10476550}
 }
 }
 \author{
-Blake Moya <blakemoya@utexas.edu>
+Blake Moya \href{mailto:blakemoya@utexas.edu}{blakemoya@utexas.edu}
 }
 \keyword{internals}

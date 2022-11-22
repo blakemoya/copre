@@ -38,11 +38,13 @@ grid points.}
 }
 \value{
 A \code{grideval_result} object, which is a matrix with dimension
- \code{[k, m]} of evaluated sample functions, with the following attributes:
- * \code{func}: The evaluated function.
- * \code{grid}: The grid points on which each of the \code{k} rows was
-  evaluated.
- * \code{args}: A copy of the \code{args} entry from \code{obj}.
+\code{[k, m]} of evaluated sample functions, with the following attributes:
+\itemize{
+\item \code{func}: The evaluated function.
+\item \code{grid}: The grid points on which each of the \code{k} rows was
+evaluated.
+\item \code{args}: A copy of the \code{args} entry from \code{obj}.
+}
 }
 \description{
 Grid evaluation of \code{copre_result} and \code{mdpolya_result} objects

@@ -1,7 +1,7 @@
 #' Copula Resampling
 #'
 #' @description A function that samples predictive distributions for univariate
-#'  continuous data using the bivariate gaussian copula.
+#'  continuous data using the bivariate Gaussian copula.
 #'
 #' @param data The data from which to sample predictive distributions.
 #' @param N The number of unobserved data points to resample for each chain.

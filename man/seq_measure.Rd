@@ -24,11 +24,11 @@ probability of the next member in the sequence having the value j.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
- resampling scheme for mixtures.
+resampling scheme for mixtures.
 }
 \description{
 Sequence Measure for Species Sampling Models
 }
 \seealso{
-{[seqre()]}
+{\code{\link[=seqre]{seqre()}}}
 }

@@ -4,36 +4,11 @@
 \alias{seqre}
 \title{Sequence Resampling}
 \usage{
-seqre(
-  data,
-  k,
-  b_msr,
-  s_msr,
-  keep_marg = FALSE,
-  burn = 1000,
-  thin = 150,
-  inc = 1000,
-  eps = 0.01,
-  max_it = 100
-)
+seqre(obj, inc = 1000, eps = 0.001, max_it = 100)
 }
 \arguments{
-\item{data}{The data from which to sample predictive distributions.}
-
-\item{k}{The number of predictive samples to draw.}
-
-\item{b_msr}{A \code{base_measure} object.}
-
-\item{s_msr}{A \code{seq_measure} object.}
-
-\item{keep_marg}{A logical value indicating whether or not to keep the
-results from the marginal MCMC sampler.}
-
-\item{burn}{The number of initial sampling iterations to discard, will be
-truncated if a non-integer.}
-
-\item{thin}{The number of sampling iterations to discard between records,
-will be truncated if a non-integer.}
+\item{obj}{A \code{seqre_result} object, usually output from
+\code{gibbsmix()}.}
 
 \item{inc}{A positive integer increment value for the number of predictive
 samples to take each convergence check.}
@@ -44,12 +19,12 @@ samples to take each convergence check.}
 }
 \value{
 A \code{seqre_result} object, or a list of two \code{seqre_result}
- objects if \code{keep_marg} is \code{TRUE}.
+objects if \code{keep_marg} is \code{TRUE}.
 }
 \description{
 A function that samples predictive distributions for univariate
- continuous data using exchangeable predictive extension.
+continuous data using exchangeable predictive extension.
 }
 \seealso{
-[seq_measure()], [base_measure()]
+\code{\link[=gibbsmix]{gibbsmix()}}
 }

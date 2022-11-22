@@ -14,10 +14,10 @@ moments <- function(obj, mom, cntrl = TRUE, grd = NULL) {
   UseMethod('moments')
 }
 
-#' @describeIn moments Moment calculation method for \code{mdpolya_result}
+#' @describeIn moments Moment calculation method for \code{seqre_result}
 #'  objects.
 #' @export
-moments.mdpolya_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
+moments.seqre_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
   moments(grideval(obj, grd = grd, func = 'density'), mom = mom, cntrl = cntrl)
 }
 

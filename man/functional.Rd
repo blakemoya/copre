@@ -16,8 +16,8 @@ functional from the pointwise mean of the sampled distributions or from each ind
 }
 \value{
 The integral over the \code{copre_result} grid of the functions in
- the list multiplied by the density of each sample distribution in
- \code{obj}.
+the list multiplied by the density of each sample distribution in
+\code{obj}.
 }
 \description{
 Obtain Functionals from a CopRe Result

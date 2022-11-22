@@ -82,7 +82,13 @@ seq_measure <- function(idx, pars, hpars, Pn, Po) {
 #'  resampling scheme for mixtures.
 #' @seealso [seq_measure()], [seqre()]
 #' @export
-Sq_dirichlet <- function(alpha, c = 1, C = 1, fix_a = TRUE) {
+Sq_dirichlet <- function(alpha = 1, c = NULL, C = NULL) {
+  if (!(is.null(c) | is.null(C))) {
+    fix_a <- FALSE
+    alpha <- rgamma(c, C)
+  } else {
+    fix_a <- TRUE
+  }
   if (alpha <= 0) {
     stop('`alpha` must be positive.')
   }

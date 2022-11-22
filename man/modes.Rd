@@ -31,11 +31,11 @@ anti-modes.}
 }
 \value{
 A matrix of modes values in the support of the \code{copre_result}
- density
+density
 }
 \description{
 Extracts the modes from a \code{copre_result} or
- \code{mdp_result} object.
+\code{mdp_result} object.
 }
 \section{Methods (by class)}{
 \itemize{

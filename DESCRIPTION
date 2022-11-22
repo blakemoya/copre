@@ -22,7 +22,8 @@ Description: Performs Bayesian nonparametric density estimation using Martingale
  <doi:10.1080/01621459.1995.10476550>.
 License: GPL (>= 2)
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
+Roxygen: list(markdown = TRUE)
 LinkingTo:
   Rcpp,
   RcppArmadillo,

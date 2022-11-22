@@ -4,7 +4,7 @@
 \alias{G_normls}
 \title{Normal-Inverse-Gamma Base Measure for Location-Scale Normal Mixture Models.}
 \usage{
-G_normls(mu, tau, s, S, a = 0, A = 1, fix_m = TRUE, w = 1, W = 1, fix_t = TRUE)
+G_normls(mu = 0, tau = 1, s = 1, S = 1, a = NULL, A = NULL, w = NULL, W = NULL)
 }
 \arguments{
 \item{mu}{The mean parameter.}
@@ -19,23 +19,23 @@ G_normls(mu, tau, s, S, a = 0, A = 1, fix_m = TRUE, w = 1, W = 1, fix_t = TRUE)
 
 \item{A}{The prior variance for \code{mu}.}
 
-\item{fix_m}{A logical value indicating whether or not \code{mu} should be
-fixed.}
-
 \item{w}{The prior primary shape parameter for \code{tau}.}
 
 \item{W}{The prior secondary shape parameter for \code{tau}.}
+
+\item{fix_m}{A logical value indicating whether or not \code{mu} should be
+fixed.}
 
 \item{fix_t}{A logical value indicating whether or not \code{tau} should be
 fixed.}
 }
 \value{
 A \code{base_measure} object for use in the sequence resampling
- scheme for mixtures.
+scheme for mixtures.
 }
 \description{
 Normal-Inverse-Gamma Base Measure for Location-Scale Normal Mixture Models.
 }
 \seealso{
-{[base_measure(), seqre()]}
+{\code{\link[=base_measure(), seqre]{base_measure(), seqre()}}}
 }

@@ -12,11 +12,11 @@ Bounded to \code{[0, 1]}.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
- resampling scheme for mixtures.
+resampling scheme for mixtures.
 }
 \description{
 Collapsed Gnedin Process Sequence Measure.
 }
 \seealso{
-{[seq_measure(), exseqre()]}
+{\code{\link[=seq_measure(), exseqre]{seq_measure(), exseqre()}}}
 }

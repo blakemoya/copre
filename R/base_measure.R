@@ -45,9 +45,20 @@ base_measure <- function(idx, dim, pars, hpars, eval) {
 #'  scheme for mixtures.
 #' @seealso {[base_measure(), seqre()]}
 #' @export
-G_normls <- function(mu, tau, s, S,
-                     a = 0, A = 1, fix_m = TRUE,
-                     w = 1, W = 1, fix_t = TRUE) {
+G_normls <- function(mu = 0, tau = 1, s = 1, S = 1,
+                     a = NULL, A = NULL, w = NULL, W = NULL) {
+  if (!(is.null(a) | is.null(A))) {
+    fix_m <- FALSE
+    mu <- rnorm(1, a, sqrt(A))
+  } else {
+    fix_m <- TRUE
+  }
+  if (!(is.null(w) | is.null(W))) {
+    fix_t <- FALSE
+    tau <- rgamma(1, w, W)
+  } else {
+    fix_t <- TRUE
+  }
   pars <- c(mu = mu, tau = tau, s = s, S = S)
   hpars <- c(a = a, A = A, fix_m = fix_m, w = w, W = W, fix_t = fix_t)
   eval <- function(phi, grd, f = 'density', nthreads = 1) {

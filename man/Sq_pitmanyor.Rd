@@ -18,11 +18,11 @@ greater than -\code{sigma} if \code{sigma} is in [0, 1), else ignored.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
- resampling scheme for mixtures.
+resampling scheme for mixtures.
 }
 \description{
 Pitman-Yor Sequence Measure.
 }
 \seealso{
-[seq_measure()], [seqre()]
+\code{\link[=seq_measure]{seq_measure()}}, \code{\link[=seqre]{seqre()}}
 }

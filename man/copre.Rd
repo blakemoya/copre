@@ -42,16 +42,16 @@ implementation of the algorithm.}
 }
 \value{
 A \code{copre_result} object, whose underlying structure is a list
- which contains the following components:
+which contains the following components:
 }
 \description{
 A function that samples predictive distributions for univariate
- continuous data using the bivariate gaussian copula.
+continuous data using the bivariate gaussian copula.
 }
 \examples{
 res_cop <- copre(rnorm(50), 10, 10, nthreads = 1)
 }
 \references{
 Fong, E., Holmes, C., Walker, S. G. (2021). Martingale Posterior
- Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
+Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
 }
