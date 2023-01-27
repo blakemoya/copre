@@ -4,7 +4,7 @@
 \alias{plot.grideval_result}
 \title{Create a Plot of a \code{grideval_result} Object}
 \usage{
-\method{plot}{grideval_result}(x, ..., confint = NULL)
+\method{plot}{grideval_result}(x, ..., confint = NULL, use_ggplot = TRUE)
 }
 \arguments{
 \item{x}{A \code{grideval_result} object.}
@@ -14,9 +14,12 @@
 \item{confint}{A decimal value indicating the confidence interval width (e.g.
 0.95 for a 95 percent confidence interval). Defaults to \code{NULL}, in which
 case no confidence intervals will be drawn.}
+
+\item{use_ggplot}{A logical value indicating whether to use \code{ggplot2} instead
+of the base \code{plot} function.}
 }
 \value{
-A \code{ggplot} object.
+A \code{ggplot} object if \code{ggplot2} is used, else none.
 }
 \description{
 Create a Plot of a \code{grideval_result} Object
