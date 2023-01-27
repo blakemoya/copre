@@ -24,7 +24,7 @@
 #'  Inference Using Mixtures. Journal of the American Statistical Association.
 #'  DOI: \doi{10.1080/01621459.1995.10476550}
 #' }
-#' @import Rcpp pracma ggplot2 abind dirichletprocess
+#' @import Rcpp pracma abind dirichletprocess
 #' @importFrom Rcpp sourceCpp
 #' @importFrom pracma gradient
 #' @importFrom abind abind
