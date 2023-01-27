@@ -4,7 +4,7 @@
 \alias{moments}
 \alias{moments.seqre_result}
 \alias{moments.grideval_result}
-\title{Moment calculation generic function}
+\title{Obtain Moments from a CopRe or SeqRe Result}
 \usage{
 moments(obj, mom, cntrl = TRUE, grd = NULL)
 
@@ -13,7 +13,7 @@ moments(obj, mom, cntrl = TRUE, grd = NULL)
 \method{moments}{grideval_result}(obj, mom, cntrl = TRUE, grd = NULL)
 }
 \arguments{
-\item{obj}{The object for which a moment will be calculated.}
+\item{obj}{A \code{copre_result} or \code{seqre_result} object.}
 
 \item{mom}{A numeric scalar indicating the moment to calculate.}
 
@@ -24,18 +24,15 @@ or not. Defaults to \code{TRUE}.}
 samples in \code{obj} should be calculated for trapezoidal integration.}
 }
 \value{
-A vector of moment values for each sampled distribution in
-\code{obj}.
+A vector of moment values for each sampled distribution in \code{obj}.
 }
 \description{
-Moment calculation generic function
+Obtain Moments from a CopRe or SeqRe Result
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{moments(seqre_result)}: Moment calculation method for \code{seqre_result}
-objects.
+\item \code{moments(seqre_result)}: Moment calculation method for \code{seqre_result} objects.
 
-\item \code{moments(grideval_result)}: Moment calculation method for \code{grideval_result}
-objects.
+\item \code{moments(grideval_result)}: Moment calculation method for \code{grideval_result} objects.
 
 }}

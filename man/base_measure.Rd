@@ -15,15 +15,14 @@ base_measure(idx, dim, pars, hpars, eval)
 
 \item{hpars}{A list of hyperparameters used to generate \code{pars}.}
 
-\item{eval}{An evaluation function taking \code{phi}, a list of mixture,
-matrices as in \code{mdp()}, \code{grd}, a grid vector, \code{f}, a
-character string indicating whether to calculate the gradient, density, or
-distribution function, and \code{nthreads}, a number of threads to utilize
-for parallel execution.}
+\item{eval}{An evaluation function taking \code{phi}, a list of mixture parameter
+matrices, \code{grd}, a grid vector, \code{f}, a character string indicating whether
+to calculate the gradient, density, or distribution function, and
+\code{nthreads}, a number of threads to utilize for parallel execution.}
 }
 \value{
-A \code{base_measure} object for use in the sequence resampling
-scheme for mixtures.
+A \code{base_measure} object for use in the sequence resampling scheme for
+mixtures.
 }
 \description{
 A structure for wrapping base measures as in Escobar and West

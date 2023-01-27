@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.R
 \name{plot.copre_result}
 \alias{plot.copre_result}
-\title{CopRe Result Plotter}
+\title{Create a CopRe Result Plot}
 \usage{
 \method{plot}{copre_result}(x, ..., func = "density", confint = NULL)
 }
@@ -14,8 +14,8 @@
 \item{func}{Either 'distribution', 'density', or 'gradient'.}
 
 \item{confint}{A decimal value indicating the confidence interval width (e.g.
-0.95 for a 95\% confidence interval). Defaults to \code{NULL}, in which case
-no confidence intervals will be drawn.}
+0.95 for a 95\% confidence interval). Defaults to \code{NULL}, in which case no
+confidence intervals will be drawn.}
 }
 \value{
 A \code{ggplot} object.

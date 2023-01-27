@@ -1,17 +1,16 @@
 #' Sequence Resampling
 #'
 #' @description A function that samples predictive distributions for univariate
-#'  continuous data using exchangeable predictive extension.
+#'   continuous data using exchangeable predictive extension.
 #'
-#' @param obj A \code{seqre_result} object, usually output from
-#'  \code{gibbsmix()}.
+#' @param obj A `seqre_result` object, usually output from `gibbsmix()`.
 #' @param inc A positive integer increment value for the number of predictive
-#'  samples to take each convergence check.
+#'   samples to take each convergence check.
 #' @param eps An error value which determines the convergence approximation.
 #' @param max_it A positive integer maximum number of iterations before halting.
 #'
-#' @return A \code{seqre_result} object, or a list of two \code{seqre_result}
-#'  objects if \code{keep_marg} is \code{TRUE}.
+#' @return A `seqre_result` object, or a list of two `seqre_result` objects if
+#'   `keep_marg` is `TRUE`.
 #' @seealso [gibbsmix()]
 #' @export
 seqre <- function(obj, inc = 1000, eps = 0.001, max_it = 100) {

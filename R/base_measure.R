@@ -6,15 +6,14 @@
 #' @param idx A unique index for the base measure.
 #' @param dim A dimension for the support of the base measure.
 #' @param pars A list of parameters used to generate mixture components.
-#' @param hpars A list of hyperparameters used to generate \code{pars}.
-#' @param eval An evaluation function taking \code{phi}, a list of mixture,
-#'  matrices as in \code{mdp()}, \code{grd}, a grid vector, \code{f}, a
-#'  character string indicating whether to calculate the gradient, density, or
-#'  distribution function, and \code{nthreads}, a number of threads to utilize
-#'  for parallel execution.
+#' @param hpars A list of hyperparameters used to generate `pars`.
+#' @param eval An evaluation function taking `phi`, a list of mixture parameter
+#'   matrices, `grd`, a grid vector, `f`, a character string indicating whether
+#'   to calculate the gradient, density, or distribution function, and
+#'   `nthreads`, a number of threads to utilize for parallel execution.
 #'
-#' @return A \code{base_measure} object for use in the sequence resampling
-#'  scheme for mixtures.
+#' @return A `base_measure` object for use in the sequence resampling scheme for
+#'   mixtures.
 #' @seealso {[seqre()]}
 #' @references \itemize{
 #'  \item Escobar M. D., West, M. (1995) Bayesian Density Estimation and
@@ -33,16 +32,15 @@ base_measure <- function(idx, dim, pars, hpars, eval) {
 #' @param tau The variance scaling parameter.
 #' @param s The primary shape parameter for the Inverse-Gamma component.
 #' @param S The secondary shape parameter for the Inverse-Gamma component.
-#' @param a The prior mean parameter for \code{mu}.
-#' @param A The prior variance for \code{mu}.
-#' @param fix_m A logical value indicating whether or not \code{mu} should be
-#'  fixed.
-#' @param w The prior primary shape parameter for \code{tau}.
-#' @param W The prior secondary shape parameter for \code{tau}.
-#' @param fix_t A logical value indicating whether or not \code{tau} should be
-#'  fixed.
-#' @return A \code{base_measure} object for use in the sequence resampling
-#'  scheme for mixtures.
+#' @param a The prior mean parameter for `mu`.
+#' @param A The prior variance for `mu`.
+#' @param fix_m A logical value indicating whether or not `mu` should be fixed.
+#' @param w The prior primary shape parameter for `tau`.
+#' @param W The prior secondary shape parameter for `tau`.
+#' @param fix_t A logical value indicating whether or not `tau` should be fixed.
+#'
+#' @return A `base_measure` object for use in the sequence resampling scheme for
+#'   mixtures.
 #' @seealso {[base_measure(), seqre()]}
 #' @export
 G_normls <- function(mu = 0, tau = 1, s = 1, S = 1,

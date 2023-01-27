@@ -5,14 +5,14 @@
 #'
 #' @param data The data from which to sample predictive distributions.
 #' @param k The number of predictive samples to draw.
-#' @param b_msr A \code{base_measure} object.
-#' @param s_msr A \code{seq_measure} object.
+#' @param b_msr A `base_measure` object.
+#' @param s_msr A `seq_measure` object.
 #' @param burn The number of initial sampling iterations to discard, will be
 #'  truncated if a non-integer.
 #' @param thin The number of sampling iterations to discard between records,
 #'  will be truncated if a non-integer.
 #'
-#' @return A \code{seqre_result} object.
+#' @return A `seqre_result` object.
 #' @seealso [seqre()], [seq_measure()], [base_measure()]
 #' @export
 gibbsmix <- function(data, k, b_msr, s_msr, burn = 1000, thin = 150) {

@@ -1,11 +1,11 @@
-#' CopRe Result Plotter
+#' Create a CopRe Result Plot
 #'
-#' @param x A \code{copre_result} object.
-#' @param ... Additional arguments discarded from \code{plot}.
+#' @param x A `copre_result` object.
+#' @param ... Additional arguments discarded from `plot`.
 #' @param func Either 'distribution', 'density', or 'gradient'.
 #' @param confint A decimal value indicating the confidence interval width (e.g.
-#'   0.95 for a 95% confidence interval). Defaults to \code{NULL}, in which case
-#'   no confidence intervals will be drawn.
+#'   0.95 for a 95% confidence interval). Defaults to `NULL`, in which case no
+#'   confidence intervals will be drawn.
 #'
 #' @return A \code{ggplot} object.
 #' @export
@@ -13,14 +13,14 @@ plot.copre_result <- function(x, ..., func = 'density', confint = NULL) {
   plot.grideval_result(grideval(x, func = func), confint = confint)
 }
 
-#' SeqRe Result Plotter
+#' Create a SeqRe Result Plot
 #'
-#' @param x A \code{seqre_result} object.
-#' @param ... Additional arguments discarded from \code{plot}.
+#' @param x A `seqre_result` object.
+#' @param ... Additional arguments discarded from `plot`.
 #' @param func Either 'distribution', 'density', or 'gradient'.
 #' @param confint A decimal value indicating the confidence interval width (e.g.
-#'   0.95 for a 95% confidence interval). Defaults to \code{NULL}, in which case
-#'   no confidence intervals will be drawn.
+#'   0.95 for a 95% confidence interval). Defaults to `NULL`, in which case no
+#'   confidence intervals will be drawn.
 #'
 #' @return A \code{ggplot} object.
 #' @export
@@ -28,29 +28,13 @@ plot.seqre_result <- function(x, ..., func = 'density', confint = NULL) {
   plot.grideval_result(grideval(x, func = func), confint = confint)
 }
 
-#' Plotting method for \code{mdpolya_result} objects
+#' Create a Plot of a `grideval_result` Object
 #'
-#' @param x An \code{mdpolya_result} object, substituting \code{obj}.
-#' @param ... Additional arguments discarded from \code{plot}.
-#' @inheritParams grideval
+#' @param x A `grideval_result` object.
+#' @param ... Additional arguments discarded from `plot`.
 #' @param confint A decimal value indicating the confidence interval width (e.g.
-#'   0.95 for a 95% confidence interval). Defaults to \code{NULL}, in which case
-#'   no confidence intervals will be drawn.
-#'
-#' @return A \code{ggplot} object.
-#' @export
-plot.mdpolya_result <- function(x, ..., grd = NULL, func = 'density',
-                                confint = NULL, nthreads = 1) {
-  plot.grideval_result(grideval(x, grd, func, nthreads), confint = confint)
-}
-
-#' Plotting method for \code{grideval_result} objects
-#'
-#' @param x A \code{grideval_result} object.
-#' @param ... Additional arguments discarded from \code{plot}.
-#' @param confint A decimal value indicating the confidence interval width (e.g.
-#'   0.95 for a 95 percent confidence interval). Defaults to \code{NULL}, in
-#'   which case no confidence intervals will be drawn.
+#'   0.95 for a 95 percent confidence interval). Defaults to `NULL`, in which
+#'   case no confidence intervals will be drawn.
 #'
 #' @return A \code{ggplot} object.
 #' @export

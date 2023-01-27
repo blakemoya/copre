@@ -1,35 +1,28 @@
 #' Mode Extractor
 #'
-#' @description Extracts the modes from a \code{copre_result} or
-#'  \code{mdp_result} object.
+#' @description Extracts the modes from a `copre_result` or `seqre_result`
+#'   object.
 #'
-#' @param obj A \code{copre_result} or \code{mdp_result} object.
+#' @param obj A `copre_result` or `mdp_result` object.
 #' @param mean A logical value indicating whether to extract the modes of the
 #'  mean density of each of the individual sampled density.
-#' @param grd For \code{mdpolya_result}, a grid on which to evaluate the object.
+#' @param grd For `mdpolya_result`, a grid on which to evaluate the object.
 #' @param anti A logical value indicating whether to extract true modes or
 #'  anti-modes.
 #'
-#' @return A matrix of modes values in the support of the \code{copre_result}
-#'  density
+#' @return A matrix of modes values in the support of the `copre_result` density
 #' @export
 modes <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   UseMethod('modes')
 }
 
-#' @describeIn modes Mode-counting method for \code{mdpolya_result} objects.
-#' @export
-modes.mdpolya_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
-  modes(grideval(obj, grd = grd, func = 'density'), mean = mean, anti = anti)
-}
-
-#' @describeIn modes Mode-counting method for \code{seqre_result} objects.
+#' @describeIn modes Mode-counting method for `seqre_result` objects.
 #' @export
 modes.seqre_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   modes(grideval(obj, grd = grd, func = 'density'), mean = mean, anti = anti)
 }
 
-#' @describeIn modes Mode-counting method for \code{grideval_result} objects.
+#' @describeIn modes Mode-counting method for `grideval_result` objects.
 #' @export
 modes.grideval_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   if (obj$func != 'density') {
@@ -51,15 +44,15 @@ modes.grideval_result <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   }
 }
 
-#' @param obj A \code{copre_result} or \code{mdp_result} object
+#' @param obj A `copre_result` or `seqre_result` object.
 #' @param mean A logical value indicating whether to count the modes of the mean
-#'  density of each of the individual sampled density
-#' @param grd For \code{mdpolya_result}, a grid on which to evaluate the object.
+#'  density of each of the individual sampled density.
+#' @param grd For `seqre_result`, a grid on which to evaluate the object.
 #' @param anti A logical value indicating whether to extract true modes or
-#'  anti-modes.
+#'  anti-modes (i.e. local minima of th3e density function).
 #'
-#' @describeIn modes Counts the modes from a \code{copre_result} or
-#'  \code{mdp_result} object.
+#' @describeIn modes Counts the modes from a `copre_result` or `seqre_result`
+#'   object.
 #' @export
 n_modes <- function(obj, mean = TRUE, grd = NULL, anti = FALSE) {
   if (mean) {

@@ -1,19 +1,19 @@
 #' Sequence Measure for Species Sampling Models
 #'
 #' @param idx A unique index for the sequence measure.
-#' @param pars A list of parameters used in \code{Pn} and \code{Po} to generate
-#'  a sequence.
-#' @param hpars A list of hyperparameters used to generate \code{pars}.
-#' @param Pn A function on a sequence length \code{n} and a number of unique
-#'  values \code{k} that returns the probability of the next member in the
-#'  sequence having a new value.
-#' @param Po A function on a sequence length \code{n}, a number of unique values
-#'  \code{k}, and the number of values equal to j \code{kj} that returns the
-#'  probability of the next member in the sequence having the value j.
+#' @param pars A list of parameters used in `Pn` and `Po` to generate a
+#'   sequence.
+#' @param hpars A list of hyperparameters used to generate `pars`.
+#' @param Pn A function on a sequence length `n` and a number of unique values
+#'   `k` that returns the probability of the next member in the sequence having
+#'   a new value.
+#' @param Po A function on a sequence length `n`, a number of unique values `k`,
+#'   and the number of values equal to `j`, `kj`, that returns the probability
+#'   of the next member in the sequence having the value `j`.
 #'
-#' @return A \code{seq_measure} object for use in the exchangeable sequence
-#'  resampling scheme for mixtures.
-#' @seealso {[seqre()]}
+#' @return A `seq_measure` object for use in the exchangeable sequence
+#'   resampling scheme for mixtures.
+#' @seealso [seqre()]
 seq_measure <- function(idx, pars, hpars, Pn, Po) {
   obj <- list(idx = idx, pars = pars, hpars = hpars, Pn = Pn, Po = Po)
   pnext <- function(z) {
@@ -72,14 +72,14 @@ seq_measure <- function(idx, pars, hpars, Pn, Po) {
 #' Dirichlet Sequence Measure.
 #'
 #' @param alpha The concentration parameter for the Dirichlet process. Must be
-#'  greater than 0.
-#' @param c The prior primary shape parameter for \code{alpha}.
-#' @param C The prior secondary shape parameter for \code{alpha}.
-#' @param fix_m A logical value indicating whether or not \code{alpha} should be
-#'  fixed.
+#'   greater than 0.
+#' @param c The prior primary shape parameter for `alpha`.
+#' @param C The prior secondary shape parameter for `alpha`.
+#' @param fix_m A logical value indicating whether or not `alpha` should be
+#'   fixed.
 #'
-#' @return A \code{seq_measure} object for use in the exchangeable sequence
-#'  resampling scheme for mixtures.
+#' @return A `seq_measure` object for use in the exchangeable sequence
+#'   resampling scheme for mixtures.
 #' @seealso [seq_measure()], [seqre()]
 #' @export
 Sq_dirichlet <- function(alpha = 1, c = NULL, C = NULL) {
@@ -103,12 +103,12 @@ Sq_dirichlet <- function(alpha = 1, c = NULL, C = NULL) {
 
 #' Pitman-Yor Sequence Measure.
 #'
-#' @param d The discount parameter for the Pitman-Yor process. Must be less
-#'  than 1.
+#' @param d The discount parameter for the Pitman-Yor process. Must be less than
+#'   1.
 #' @param alpha The concentration parameter for the Pitman-Yor process. Must be
-#'  greater than -\code{sigma} if \code{sigma} is in [0, 1), else ignored.
-#' @param m A positive integer used to set \code{theta = m * abs(sigma)} if
-#'  \code{sigma} is negative.
+#'   greater than -`sigma` if `sigma` is in [0, 1), else ignored.
+#' @param m A positive integer used to set `theta = m * abs(sigma)` if `sigma`
+#'   is negative.
 #'
 #' @return A \code{seq_measure} object for use in the exchangeable sequence
 #'  resampling scheme for mixtures.
@@ -134,11 +134,11 @@ Sq_pitmanyor <- function(d, alpha = 1, m = 1L) {
 #' Collapsed Gnedin Process Sequence Measure.
 #'
 #' @param gamma The gamma parameter for the Gnedin process with xi set to 0.
-#'  Bounded to \code{[0, 1]}.
+#'   Bounded to `[0, 1]`.
 #'
-#' @return A \code{seq_measure} object for use in the exchangeable sequence
-#'  resampling scheme for mixtures.
-#' @seealso {[seq_measure(), exseqre()]}
+#' @return A `seq_measure` object for use in the exchangeable sequence
+#'   resampling scheme for mixtures.
+#' @seealso [seq_measure()], [seqre()]
 #' @export
 Sq_gnedin0 <- function(gamma) {
   Pn <- function(n, k) {

@@ -9,18 +9,18 @@ seq_measure(idx, pars, hpars, Pn, Po)
 \arguments{
 \item{idx}{A unique index for the sequence measure.}
 
-\item{pars}{A list of parameters used in \code{Pn} and \code{Po} to generate
-a sequence.}
+\item{pars}{A list of parameters used in \code{Pn} and \code{Po} to generate a
+sequence.}
 
 \item{hpars}{A list of hyperparameters used to generate \code{pars}.}
 
-\item{Pn}{A function on a sequence length \code{n} and a number of unique
-values \code{k} that returns the probability of the next member in the
-sequence having a new value.}
+\item{Pn}{A function on a sequence length \code{n} and a number of unique values
+\code{k} that returns the probability of the next member in the sequence having
+a new value.}
 
-\item{Po}{A function on a sequence length \code{n}, a number of unique values
-\code{k}, and the number of values equal to j \code{kj} that returns the
-probability of the next member in the sequence having the value j.}
+\item{Po}{A function on a sequence length \code{n}, a number of unique values \code{k},
+and the number of values equal to \code{j}, \code{kj}, that returns the probability
+of the next member in the sequence having the value \code{j}.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
@@ -30,5 +30,5 @@ resampling scheme for mixtures.
 Sequence Measure for Species Sampling Models
 }
 \seealso{
-{\code{\link[=seqre]{seqre()}}}
+\code{\link[=seqre]{seqre()}}
 }

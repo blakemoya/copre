@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.R
 \name{plot.grideval_result}
 \alias{plot.grideval_result}
-\title{Plotting method for \code{grideval_result} objects}
+\title{Create a Plot of a \code{grideval_result} Object}
 \usage{
 \method{plot}{grideval_result}(x, ..., confint = NULL)
 }
@@ -12,12 +12,12 @@
 \item{...}{Additional arguments discarded from \code{plot}.}
 
 \item{confint}{A decimal value indicating the confidence interval width (e.g.
-0.95 for a 95 percent confidence interval). Defaults to \code{NULL}, in
-which case no confidence intervals will be drawn.}
+0.95 for a 95 percent confidence interval). Defaults to \code{NULL}, in which
+case no confidence intervals will be drawn.}
 }
 \value{
 A \code{ggplot} object.
 }
 \description{
-Plotting method for \code{grideval_result} objects
+Create a Plot of a \code{grideval_result} Object
 }

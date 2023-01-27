@@ -23,15 +23,13 @@ G_normls(mu = 0, tau = 1, s = 1, S = 1, a = NULL, A = NULL, w = NULL, W = NULL)
 
 \item{W}{The prior secondary shape parameter for \code{tau}.}
 
-\item{fix_m}{A logical value indicating whether or not \code{mu} should be
-fixed.}
+\item{fix_m}{A logical value indicating whether or not \code{mu} should be fixed.}
 
-\item{fix_t}{A logical value indicating whether or not \code{tau} should be
-fixed.}
+\item{fix_t}{A logical value indicating whether or not \code{tau} should be fixed.}
 }
 \value{
-A \code{base_measure} object for use in the sequence resampling
-scheme for mixtures.
+A \code{base_measure} object for use in the sequence resampling scheme for
+mixtures.
 }
 \description{
 Normal-Inverse-Gamma Base Measure for Location-Scale Normal Mixture Models.

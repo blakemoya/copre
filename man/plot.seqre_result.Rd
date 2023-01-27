@@ -2,9 +2,9 @@
 % Please edit documentation in R/plot.R
 \name{plot.seqre_result}
 \alias{plot.seqre_result}
-\title{SeqRe Result Plotter}
+\title{Create a SeqRe Result Plot}
 \usage{
-\method{plot}{seqre_result}(x, ..., func = "density", confint = NULL)
+\method{plot}{seqre_result}(x, ..., func = "density", confint = NULL, use_ggplot = TRUE)
 }
 \arguments{
 \item{x}{A \code{seqre_result} object.}
@@ -14,12 +14,15 @@
 \item{func}{Either 'distribution', 'density', or 'gradient'.}
 
 \item{confint}{A decimal value indicating the confidence interval width (e.g.
-0.95 for a 95\% confidence interval). Defaults to \code{NULL}, in which case
-no confidence intervals will be drawn.}
+0.95 for a 95\% confidence interval). Defaults to \code{NULL}, in which case no
+confidence intervals will be drawn.}
+
+\item{use_ggplot}{A logical value indicating whether to use \code{ggplot2} instead
+of the base \code{plot} function.}
 }
 \value{
-A \code{ggplot} object.
+None.
 }
 \description{
-SeqRe Result Plotter
+Create a SeqRe Result Plot
 }

@@ -7,14 +7,14 @@
 Sq_pitmanyor(d, alpha = 1, m = 1L)
 }
 \arguments{
-\item{d}{The discount parameter for the Pitman-Yor process. Must be less
-than 1.}
+\item{d}{The discount parameter for the Pitman-Yor process. Must be less than
+1.}
 
 \item{alpha}{The concentration parameter for the Pitman-Yor process. Must be
 greater than -\code{sigma} if \code{sigma} is in [0, 1), else ignored.}
 
-\item{m}{A positive integer used to set \code{theta = m * abs(sigma)} if
-\code{sigma} is negative.}
+\item{m}{A positive integer used to set \code{theta = m * abs(sigma)} if \code{sigma}
+is negative.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence

@@ -41,12 +41,12 @@ implementation of the algorithm.}
 \item{gpu_seed}{A seed for the CUDA random variates.}
 }
 \value{
-A \code{copre_result} object, whose underlying structure is a list
-which contains the following components:
+A \code{copre_result} object, whose underlying structure is a list which
+contains the following components:
 }
 \description{
 A function that samples predictive distributions for univariate
-continuous data using the bivariate gaussian copula.
+continuous data using the bivariate Gaussian copula.
 }
 \examples{
 res_cop <- copre(rnorm(50), 10, 10, nthreads = 1)

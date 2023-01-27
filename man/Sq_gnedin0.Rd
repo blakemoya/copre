@@ -8,7 +8,7 @@ Sq_gnedin0(gamma)
 }
 \arguments{
 \item{gamma}{The gamma parameter for the Gnedin process with xi set to 0.
-Bounded to \code{[0, 1]}.}
+Bounded to \verb{[0, 1]}.}
 }
 \value{
 A \code{seq_measure} object for use in the exchangeable sequence
@@ -18,5 +18,5 @@ resampling scheme for mixtures.
 Collapsed Gnedin Process Sequence Measure.
 }
 \seealso{
-{\code{\link[=seq_measure(), exseqre]{seq_measure(), exseqre()}}}
+\code{\link[=seq_measure]{seq_measure()}}, \code{\link[=seqre]{seqre()}}
 }

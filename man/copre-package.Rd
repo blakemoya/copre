@@ -8,15 +8,15 @@
 \description{
 Performs Bayesian nonparametric density estimation using Martingale posterior
 distributions and including the Copula Resampling (CopRe) algorithm. Also
-included are a Gibbs sampler for the marginal Mixture of Dirichlet Process
-(MDP) model and an extension to include full uncertainty quantification via a
-new Polya completion algorithm for the MDP. The CopRe and Polya samplers
-generate random nonparametric distributions as output, leading to complete
+included are a Gibbs sampler for the marginal Gibbs-type mixture model and an
+extension to include full uncertainty quantification via a predictive
+sequence resampling (SeqRe) algorithm. The CopRe and SeqRe samplers generate
+random nonparametric distributions as output, leading to complete
 nonparametric inference on posterior summaries. Routines for calculating
 arbitrary functionals from the sampled distributions are included as well as
 an important algorithm for finding the number and location of modes, which
 can then be used to estimate the clusters in the data using, for example,
-k-means.
+k-means. Implements work developed in Moya B., Walker S. G. (2022).
 }
 \references{
 \itemize{
