@@ -7,13 +7,13 @@
 \alias{n_modes}
 \title{Mode Extractor}
 \usage{
-modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
+modes(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-\method{modes}{seqre_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
+\method{modes}{seqre_result}(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-\method{modes}{grideval_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
+\method{modes}{grideval_result}(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-n_modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
+n_modes(obj, mean = FALSE, grd = NULL, anti = FALSE)
 }
 \arguments{
 \item{obj}{A \code{copre_result} or \code{seqre_result} object.}
@@ -22,6 +22,9 @@ n_modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
 density of each of the individual sampled density.}
 
 \item{grd}{For \code{seqre_result}, a grid on which to evaluate the object.}
+
+\item{idx}{A logical value indicating whether to also return the index within
+\code{grd} of the discovered modes.}
 
 \item{anti}{A logical value indicating whether to extract true modes or
 anti-modes (i.e. local minima of th3e density function).}
