@@ -9,19 +9,19 @@
 #'
 #' @return A vector of moment values for each sampled distribution in `obj`.
 #' @export
-moments <- function(obj, mom, cntrl = TRUE, grd = NULL) {
-  UseMethod('moments')
+moment <- function(obj, mom, cntrl = TRUE, grd = NULL) {
+  UseMethod('moment')
 }
 
-#' @describeIn moments Moment calculation method for `seqre_result` objects.
+#' @describeIn moment Moment calculation method for `seqre_result` objects.
 #' @export
-moments.seqre_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
+moment.seqre_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
   moments(grideval(obj, grd = grd, func = 'density'), mom = mom, cntrl = cntrl)
 }
 
-#' @describeIn moments Moment calculation method for `grideval_result` objects.
+#' @describeIn moment Moment calculation method for `grideval_result` objects.
 #' @export
-moments.grideval_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
+moment.grideval_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
   if (obj$func != 'density') {
     if ('copre_result' %in% class(obj)) {
       obj <- grideval(obj, func = 'density')
