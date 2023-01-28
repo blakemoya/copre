@@ -9,19 +9,18 @@
 A set of tools for Bayesian nonparametric density estimation using
 Martingale posterior distributions and including the **Cop**ula
 **Re**sampling (CopRe) algorithm. Also included are a Gibbs sampler for
-the marginal **M**ixture of **D**irichlet **P**rocess (MDP) model and an
-extension to include full uncertainty quantification via a new Polya
-completion algorithm for the MDP. The CopRe and Polya samplers generate
-random nonparametric distributions as output, leading to complete
-nonparametric inference on posterior summaries. Routines for calculating
-arbitrary functionals from the sampled distributions are included as
-well as an important algorithm for finding the number and location of
-modes, which can then be used to estimate the clusters in the data
-using, for example, k-means.
+the marginal Gibbs-type mixture model and an extension to include full
+uncertainty quantification via a predictive **Seq**uence **Re**sampling
+(SeqRe) algorithm. The CopRe and SeqRe samplers generate random
+nonparametric distributions as output, leading to complete nonparametric
+inference on posterior summaries. Routines for calculating arbitrary
+functionals from the sampled distributions are included as well as an
+important algorithm for finding the number and location of modes, which
+can then be used to estimate the clusters in the data.
 
 ## Installation
 
-You can install the development version of CopRe from
+You can install the latest stable development version of CopRe from
 [GitHub](https://github.com/blakemoya/copre) with:
 
 ``` r
@@ -31,19 +30,73 @@ devtools::install_github("blakemoya/copre")
 
 ## Usage
 
+### CopRe
+
 The basic usage of CopRe for density estimation is to supply a data
 vector, a number of forward simulations per sample, and a number of
 samples to draw:
 
 ``` r
 library(copre)
-#> CopRe v0.1.0: OpenMP disabled
-data <- c(rnorm(100, mean = -2), rnorm(100, mean = 2))
-res_cop <- copre(data, 100, 100)
+#> CopRe v0.2.0: OpenMP disabled
+data <- sample(c(rnorm(100, mean = -2), rnorm(100, mean = 2)))
+res_cop <- copre(data, 250, 100)
 plot(res_cop) +
-  ggplot2::geom_function(
+  geom_function(
     fun = function(x) (dnorm(x, mean = -2) + dnorm(x, mean = 2)) / 2
     )
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example-1.png" width="60%" style="display: block; margin: auto;" />
+
+### SeqRe
+
+### Utilities
+
+The moments of the estimated distributions can be obtained by calling
+`moment`, and arbitrary functionals of interest can be obtained
+similarly with `functionals`.
+
+``` r
+moms <- data.frame(Mean = moment(res_cop, 1),
+                   Variance = moment(res_cop, 2))
+with(moms,
+     qplot(Mean, Variance) +
+       theme_bw()
+     )
+```
+
+<img src="man/figures/README-moment-1.png" width="60%" style="display: block; margin: auto;" />
+
+The function `modes` can be used to isolate local maxima and minima in
+the denisty estimates. The argument `mean = FALSE` ensures that we get
+the modes from each sample density and not the pointwise mean of all of
+them. Here we can see the detected modes in black and the antimodes in
+red.
+
+``` r
+res_cop.dens <- grideval(res_cop)
+ns <- modes(res_cop.dens, idx = TRUE)
+us <- antimodes(res_cop.dens, idx = TRUE)
+p <- plot(res_cop.dens)
+for (i in 1:length(res_cop)) {
+  p <- p + 
+    geom_point(data = data.frame(x = ns[[i]]$value,
+                                 y = res_cop.dens[i, ns[[i]]$idx]),
+               aes(x = x, y = y), shape = 24, size = 0.5, alpha = 0.5) +
+    geom_point(data = data.frame(x = us[[i]]$value,
+                                 y = res_cop.dens[i, us[[i]]$idx]),
+               aes(x = x, y = y), shape = 25, size = 0.5, alpha = 0.5,
+               color = 'red')
+}
+p
+```
+
+<img src="man/figures/README-modes-1.png" width="60%" style="display: block; margin: auto;" />
+
+## Feedback
+
+If you have encounter any bugs or other problems while using CopRe, let
+me know using the Issues tab. For new feature requests, contact me via
+email at
+[blakemoya@utexas.edu](mailto:blakemoya@utexas.edu?subject=%5BGitHub:%20CopRe%5D%20Feature%20Request).
