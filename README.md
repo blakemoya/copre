@@ -4,10 +4,15 @@
 # CopRe Tools for Nonparametric Martingale Posterior Sampling
 
 <!-- badges: start -->
+
+[![](https://www.r-pkg.org/badges/version/copre?color=green)](https://cran.r-project.org/package=copre)
+[![](https://img.shields.io/badge/devel%20version-0.2.0-blue.svg)](https://github.com/blakemoya/copre)
+[![R build
+status](https://github.com/blakemoya/copre/workflows/R-CMD-check/badge.svg)](https://github.com/blakemoya/copre/actions)
 <!-- badges: end -->
 
 A set of tools for Bayesian nonparametric density estimation using
-Martingale posterior distributions and including the **Cop**ula
+Martingale posterior distributions including the **Cop**ula
 **Re**sampling (CopRe) algorithm. Also included are a Gibbs sampler for
 the marginal Gibbs-type mixture model and an extension to include full
 uncertainty quantification via a predictive **Seq**uence **Re**sampling
@@ -38,7 +43,6 @@ samples to draw:
 
 ``` r
 library(copre)
-#> CopRe v0.2.0: OpenMP disabled
 data <- sample(c(rnorm(100, mean = -2), rnorm(100, mean = 2)))
 res_cop <- copre(data, 250, 100)
 plot(res_cop) +
@@ -47,9 +51,38 @@ plot(res_cop) +
     )
 ```
 
-<img src="man/figures/README-example-1.png" width="60%" style="display: block; margin: auto;" />
+<p align="center">
+<img src="man/figures/README-example_copre-1.png" width="60%" style="display: block; margin: auto;" />
+</p>
+
+Currently only a Gaussian kernel copula is supported but more options
+are to be added in future versions.
 
 ### SeqRe
+
+Using SeqRe first involves specifying a model via a base measure `G` and
+an exchangeable sequence measure `Sq`. Here we can set up a normal
+location scale mixture with components assigned according to a Dirichlet
+process.
+
+We can then fit the marginal mixture model with the `gibbsmix` MCMC
+routine and then extend the results to their full nonparametric
+potential via `seqre`.
+
+``` r
+b_norm <- G_normls()
+s_dp <- Sq_dirichlet()
+
+res_seq <- gibbsmix(data, 100, b_norm, s_dp) |> seqre()
+plot(res_seq) +
+  geom_function(
+    fun = function(x) (dnorm(x, mean = -2) + dnorm(x, mean = 2)) / 2
+    )
+```
+
+<p align="center">
+<img src="man/figures/README-example_seqre-1.png" width="60%" style="display: block; margin: auto;" />
+</p>
 
 ### Utilities
 
@@ -66,13 +99,16 @@ with(moms,
      )
 ```
 
+<p align="center">
 <img src="man/figures/README-moment-1.png" width="60%" style="display: block; margin: auto;" />
+</p>
 
 The function `modes` can be used to isolate local maxima and minima in
-the denisty estimates. The argument `mean = FALSE` ensures that we get
-the modes from each sample density and not the pointwise mean of all of
-them. Here we can see the detected modes in black and the antimodes in
-red.
+the denisty estimates. Here we can see the detected modes in black and
+the antimodes in red. Experiment with using sample antimodes as a
+distribution over cluster boundaries!
+
+<p align="center">
 
 ``` r
 res_cop.dens <- grideval(res_cop)
@@ -89,10 +125,13 @@ for (i in 1:length(res_cop)) {
                aes(x = x, y = y), shape = 25, size = 0.5, alpha = 0.5,
                color = 'red')
 }
-p
+print(p)
 ```
 
+</p>
+<p align="center">
 <img src="man/figures/README-modes-1.png" width="60%" style="display: block; margin: auto;" />
+</p>
 
 ## Feedback
 
