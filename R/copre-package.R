@@ -1,7 +1,7 @@
 #' CopRe Tools for Nonparametric Martingale Posterior Sampling
 #'
 #' Performs Bayesian nonparametric density estimation using Martingale posterior
-#' distributions and including the Copula Resampling (CopRe) algorithm. Also
+#' distributions including the Copula Resampling (CopRe) algorithm. Also
 #' included are a Gibbs sampler for the marginal Gibbs-type mixture model and an
 #' extension to include full uncertainty quantification via a predictive
 #' sequence resampling (SeqRe) algorithm. The CopRe and SeqRe samplers generate
