@@ -2,48 +2,50 @@
 % Please edit documentation in R/modes.R
 \name{modes}
 \alias{modes}
-\alias{modes.mdpolya_result}
+\alias{modes.seqre_result}
 \alias{modes.grideval_result}
 \alias{n_modes}
 \title{Mode Extractor}
 \usage{
-modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
+modes(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-\method{modes}{mdpolya_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
+\method{modes}{seqre_result}(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-\method{modes}{grideval_result}(obj, mean = TRUE, grd = NULL, anti = FALSE)
+\method{modes}{grideval_result}(obj, mean = FALSE, grd = NULL, idx = FALSE, anti = FALSE)
 
-n_modes(obj, mean = TRUE, grd = NULL, anti = FALSE)
+n_modes(obj, mean = FALSE, grd = NULL, anti = FALSE)
 }
 \arguments{
-\item{obj}{A \code{copre_result} or \code{mdp_result} object}
+\item{obj}{A \code{copre_result} or \code{seqre_result} object.}
 
 \item{mean}{A logical value indicating whether to count the modes of the mean
-density of each of the individual sampled density}
+density of each of the individual sampled density.}
 
-\item{grd}{For \code{mdpolya_result}, a grid on which to evaluate the object.}
+\item{grd}{For \code{seqre_result}, a grid on which to evaluate the object.}
+
+\item{idx}{A logical value indicating whether to also return the index within
+\code{grd} of the discovered modes.}
 
 \item{anti}{A logical value indicating whether to extract true modes or
-anti-modes.}
+anti-modes (i.e. local minima of th3e density function).}
 }
 \value{
-A matrix of modes values in the support of the \code{copre_result}
- density
+A matrix of modes values in the support of the \code{copre_result} density
 }
 \description{
-Extracts the modes from a \code{copre_result} or
- \code{mdp_result} object.
+Extracts the modes from a \code{copre_result} or \code{seqre_result}
+object.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{modes(mdpolya_result)}: Mode-counting method for \code{mdpolya_result} objects.
+\item \code{modes(seqre_result)}: Mode-counting method for \code{seqre_result} objects.
 
 \item \code{modes(grideval_result)}: Mode-counting method for \code{grideval_result} objects.
 
 }}
 \section{Functions}{
 \itemize{
-\item \code{n_modes()}: Counts the modes from a \code{copre_result} or
-\code{mdp_result} object.
+\item \code{n_modes()}: Counts the modes from a \code{copre_result} or \code{seqre_result}
+object.
 
 }}

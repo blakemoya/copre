@@ -1,25 +1,25 @@
 #' Copula Resampling
 #'
 #' @description A function that samples predictive distributions for univariate
-#'  continuous data using the bivariate gaussian copula.
+#'   continuous data using the bivariate Gaussian copula.
 #'
-#' @param data The from which to sample predictive distributions.
+#' @param data The data from which to sample predictive distributions.
 #' @param N The number of unobserved data points to resample for each chain.
 #' @param k The number of predictive distributions to sample.
 #' @param rho A scalar concentration parameter.
 #' @param grd_res The number of points on which to evaluate the predictive
-#'  distribution.
+#'   distribution.
 #' @param nthreads The number of threads to call for parallel execution.
 #' @param gpu A logical value indicating whether or not to use the CUDA
-#'  implementation of the algorithm.
+#'   implementation of the algorithm.
 #' @param gpu_path The path to the CUDA implementation source code.
 #' @param gpu_odir A directory to output the compiled CUDA code.
 #' @param gpu_seed A seed for the CUDA random variates.
 #'
-#' @return A \code{copre_result} object, whose underlying structure is a list
-#'  which contains the following components:
+#' @return A `copre_result` object, whose underlying structure is a list which
+#'   contains the following components:
 #' @references Fong, E., Holmes, C., Walker, S. G. (2021). Martingale Posterior
-#'  Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
+#'   Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
 #' @examples
 #' res_cop <- copre(rnorm(50), 10, 10, nthreads = 1)
 #' @export

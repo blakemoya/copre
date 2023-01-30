@@ -9,19 +9,11 @@ copre_cpp <- function(y_perm, alpha, rho, N, k, P, grd, nthreads) {
     .Call('_copre_copre_cpp', PACKAGE = 'copre', y_perm, alpha, rho, N, k, P, grd, nthreads)
 }
 
-mdp_cpp <- function(y, k, alpha, mu, tau, s, S, c, C, a, A, w, W, fix_a, fix_m, fix_t, burn, thin) {
-    .Call('_copre_mdp_cpp', PACKAGE = 'copre', y, k, alpha, mu, tau, s, S, c, C, a, A, w, W, fix_a, fix_m, fix_t, burn, thin)
+marg_cpp <- function(y, k, z0, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, burn, thin) {
+    .Call('_copre_marg_cpp', PACKAGE = 'copre', y, k, z0, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, burn, thin)
 }
 
-polyaurn_cpp <- function(theta, hyper, eps, ups, nthreads) {
-    .Call('_copre_polyaurn_cpp', PACKAGE = 'copre', theta, hyper, eps, ups, nthreads)
-}
-
-polyaurngen_cpp <- function(theta, alpha, eps, ups, nthreads) {
-    .Call('_copre_polyaurngen_cpp', PACKAGE = 'copre', theta, alpha, eps, ups, nthreads)
-}
-
-evalmdpolya_cpp <- function(mdpolya, x, f, nthreads) {
-    .Call('_copre_evalmdpolya_cpp', PACKAGE = 'copre', mdpolya, x, f, nthreads)
+seqre_cpp <- function(phi, n, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, eps, inc, max_it) {
+    .Call('_copre_seqre_cpp', PACKAGE = 'copre', phi, n, bas_idx, bas_pars, bas_hpars, seq_idx, seq_pars, seq_hpars, eps, inc, max_it)
 }
 

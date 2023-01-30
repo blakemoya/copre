@@ -18,7 +18,7 @@ copre(
 )
 }
 \arguments{
-\item{data}{The from which to sample predictive distributions.}
+\item{data}{The data from which to sample predictive distributions.}
 
 \item{N}{The number of unobserved data points to resample for each chain.}
 
@@ -41,17 +41,17 @@ implementation of the algorithm.}
 \item{gpu_seed}{A seed for the CUDA random variates.}
 }
 \value{
-A \code{copre_result} object, whose underlying structure is a list
- which contains the following components:
+A \code{copre_result} object, whose underlying structure is a list which
+contains the following components:
 }
 \description{
 A function that samples predictive distributions for univariate
- continuous data using the bivariate gaussian copula.
+continuous data using the bivariate Gaussian copula.
 }
 \examples{
 res_cop <- copre(rnorm(50), 10, 10, nthreads = 1)
 }
 \references{
 Fong, E., Holmes, C., Walker, S. G. (2021). Martingale Posterior
- Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
+Distributions. arXiv. DOI: \doi{10.48550/arxiv.2103.15671}
 }

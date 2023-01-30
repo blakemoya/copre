@@ -5,8 +5,8 @@
 \alias{[[.grideval_result}
 \alias{grideval}
 \alias{grideval.copre_result}
-\alias{grideval.mdpolya_result}
-\title{Grid evaluation of \code{copre_result} and \code{mdpolya_result} objects}
+\alias{grideval.seqre_result}
+\title{Grid evaluation of \code{copre_result} and \code{seqre_result} objects}
 \usage{
 \method{$}{grideval_result}(obj, name)
 
@@ -16,46 +16,45 @@ grideval(obj, grd = NULL, func = "density", nthreads = 1)
 
 \method{grideval}{copre_result}(obj, grd = NULL, func = "density", nthreads = 1)
 
-\method{grideval}{mdpolya_result}(obj, grd = NULL, func = "density", nthreads = 1)
+\method{grideval}{seqre_result}(obj, grd = NULL, func = "density", nthreads = 1)
 }
 \arguments{
-\item{obj}{A \code{copre_result} or \code{mdpolya_result} object.}
+\item{obj}{A \code{copre_result} or \code{seqre_result} object.}
 
-\item{name}{The name of the attribute to access (i.e. \code{func},
-\code{grid}, or \code{args}).}
+\item{name}{The name of the attribute to access (i.e. \code{func}, \code{grid}, or
+\code{args}).}
 
 \item{i}{A numeric vector of sample indices.}
 
-\item{grd}{For \code{mdpolya_result} objects, a numeric vector of \code{m}
-grid points.}
+\item{grd}{For \code{seqre_result} objects, a numeric vector of \code{m} grid points.}
 
 \item{func}{Either 'distribution', 'density', or 'gradient'.}
 
 \item{nthreads}{The number of parallel threads to launch with OpenMP.}
 }
 \value{
-A \code{grideval_result} object, which is a matrix with dimension
- \code{[k, m]} of evaluated sample functions, with the following attributes:
- * \code{func}: The evaluated function.
- * \code{grid}: The grid points on which each of the \code{k} rows was
-  evaluated.
- * \code{args}: A copy of the \code{args} entry from \code{obj}.
+A \code{grideval_result} object, which is a matrix with dimension \verb{[k, m]}
+of evaluated sample functions, with the following attributes:
+\itemize{
+\item \code{func}: The evaluated function.
+\item \code{grid}: The grid points on which each of the \code{k} rows was evaluated.
+\item \code{args}: A copy of the \code{args} entry from \code{obj}.
+}
 }
 \description{
-Grid evaluation of \code{copre_result} and \code{mdpolya_result} objects
+Grid evaluation of \code{copre_result} and \code{seqre_result} objects
 }
 \section{Methods (by class)}{
 \itemize{
 \item \code{grideval(copre_result)}: Grid evaluation method for \code{copre_result} objects.
 
-\item \code{grideval(mdpolya_result)}: Grid evaluation method for \code{mdpolya_result}
+\item \code{grideval(seqre_result)}: Grid evaluation method for \code{seqre_result}
 objects.
 
 }}
 \section{Functions}{
 \itemize{
-\item \code{$}: Attribute access method for \code{grideval_result}
-objects
+\item \code{$}: Attribute access method for \code{grideval_result} objects
 
 \item \code{[[}: Subset method for \code{grideval_result} objects
 
