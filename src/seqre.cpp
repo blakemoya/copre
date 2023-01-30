@@ -50,10 +50,6 @@ Rcpp::List marg_cpp(arma::vec y, arma::uword k, arma::uvec z0,
             bas.q(y(i), theta.row(z(j)).t());
         }
       }
-      // Rcpp::Rcout << z.t();
-      // Rcpp::Rcout << nums.t();
-      // Rcpp::Rcout << cnts.t();
-      // Rcpp::Rcout << std::endl;
       qj = qj / sum(qj);
       arma::uword z_prop = sample(nums, 1, true, qj)(0);
       if (z_prop == i) {

@@ -87,6 +87,7 @@ Sq_dirichlet <- function(alpha = 1, c = NULL, C = NULL) {
     fix_a <- FALSE
     alpha <- rgamma(c, C)
   } else {
+    c <- C <- 0
     fix_a <- TRUE
   }
   if (alpha <= 0) {

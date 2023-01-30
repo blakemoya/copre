@@ -16,7 +16,7 @@ moment <- function(obj, mom, cntrl = TRUE, grd = NULL) {
 #' @describeIn moment Moment calculation method for `seqre_result` objects.
 #' @export
 moment.seqre_result <- function(obj, mom, cntrl = TRUE, grd = NULL) {
-  moments(grideval(obj, grd = grd, func = 'density'), mom = mom, cntrl = cntrl)
+  moment(grideval(obj, grd = grd, func = 'density'), mom = mom, cntrl = cntrl)
 }
 
 #' @describeIn moment Moment calculation method for `grideval_result` objects.

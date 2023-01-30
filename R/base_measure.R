@@ -49,12 +49,14 @@ G_normls <- function(mu = 0, tau = 1, s = 1, S = 1,
     fix_m <- FALSE
     mu <- rnorm(1, a, sqrt(A))
   } else {
+    a <- A <- 0
     fix_m <- TRUE
   }
   if (!(is.null(w) | is.null(W))) {
     fix_t <- FALSE
     tau <- rgamma(1, w, W)
   } else {
+    w <- W <- 0
     fix_t <- TRUE
   }
   pars <- c(mu = mu, tau = tau, s = s, S = S)
