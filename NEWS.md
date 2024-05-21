@@ -8,3 +8,8 @@
 * Created a base plot method and loosened dependency on `ggplot2`.
 * Minor bug fixes.
 * Added a `NEWS.md` file to track changes to the package.
+
+# copre 0.2.1
+
+* Fixed a Debian compile warning.
+* Typo corrections in documentation.

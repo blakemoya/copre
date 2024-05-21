@@ -117,7 +117,7 @@ seq_measure* get_seq(arma::uword seq_idx, arma::vec seq_pars,
       sq_pitmanyor* seq = new sq_pitmanyor();
       seq->d = seq_pars(0);
       if (seq_pars(0) < 0) {
-        seq->alpha = seq_pars(1) * abs(floor(seq_pars(0)));
+        seq->alpha = seq_pars(1) * fabs(floor(seq_pars(0)));
       } else {
         seq->alpha = seq_pars(1);
       }
@@ -170,7 +170,7 @@ Rcpp::List seqre_cpp(Rcpp::List phi, arma::uword n,
     arma::uword nn = n;
     double rat0 = (double)(arma::max(cnts)) / nn;
     double rat1 = (double)(arma::max(cnts_new)) / (nn + inc);
-    double score = abs(rat1 - rat0);
+    double score = fabs(rat1 - rat0);
     nn = nn + inc;
     while((score > eps) & (it < max_it)) {
       cnts = cnts_new;
@@ -178,7 +178,7 @@ Rcpp::List seqre_cpp(Rcpp::List phi, arma::uword n,
       it++;
       rat0 = (double)(arma::max(cnts)) / nn;
       rat1 = (double)(arma::max(cnts_new)) / (nn + inc);
-      score = abs(rat1 - rat0);
+      score = fabs(rat1 - rat0);
       nn = nn + inc;
     }
     cnts = cnts_new;

@@ -27,7 +27,7 @@ density of each of the individual sampled density.}
 \code{grd} of the discovered modes.}
 
 \item{anti}{A logical value indicating whether to extract true modes or
-anti-modes (i.e. local minima of th3e density function).}
+anti-modes (i.e. local minima of the density function).}
 }
 \value{
 A matrix of modes values in the support of the \code{copre_result} density

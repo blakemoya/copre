@@ -13,7 +13,7 @@ register_s3_method(pkg, generic, class, fun = NULL)
 
 \item{class}{Class name.}
 
-\item{fun}{Optional custum function name.}
+\item{fun}{Optional custom function name.}
 }
 \value{
 None

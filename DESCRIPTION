@@ -1,7 +1,7 @@
 Package: copre
 Type: Package
 Title: Tools for Nonparametric Martingale Posterior Sampling
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person("Blake", "Moya", email = "blakemoya@utexas.edu",
            role = c("cre", "aut")),
@@ -22,7 +22,7 @@ Description: Performs Bayesian nonparametric density estimation using Martingale
  <doi:10.1080/01621459.1995.10476550>.
 License: GPL (>= 2)
 Encoding: UTF-8
-RoxygenNote: 7.2.2
+RoxygenNote: 7.3.1
 Roxygen: list(markdown = TRUE)
 LinkingTo:
   Rcpp,

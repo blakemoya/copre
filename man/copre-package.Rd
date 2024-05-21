@@ -3,7 +3,6 @@
 \docType{package}
 \name{copre-package}
 \alias{copre-package}
-\alias{_PACKAGE}
 \title{CopRe Tools for Nonparametric Martingale Posterior Sampling}
 \description{
 Performs Bayesian nonparametric density estimation using Martingale posterior

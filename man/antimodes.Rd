@@ -2,7 +2,7 @@
 % Please edit documentation in R/modes.R
 \name{antimodes}
 \alias{antimodes}
-\title{Antiode Extractor}
+\title{Antimode Extractor}
 \usage{
 antimodes(obj, mean = FALSE, grd = NULL, idx = FALSE)
 }
