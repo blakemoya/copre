@@ -1,6 +1,11 @@
-# copre 0.1.0
+# copre 0.2.2
 
-* Initial release.
+* Fixed an RcppArmadillo deprecation error.
+
+# copre 0.2.1
+
+* Fixed a Debian compile warning.
+* Typo corrections in documentation.
 
 # copre 0.2.0
 
@@ -9,11 +14,6 @@
 * Minor bug fixes.
 * Added a `NEWS.md` file to track changes to the package.
 
-# copre 0.2.1
+# copre 0.1.0
 
-* Fixed a Debian compile warning.
-* Typo corrections in documentation.
-
-# copre 0.2.2
-
-* Fixed an RcppArmadillo deprecation error.
+* Initial release.
