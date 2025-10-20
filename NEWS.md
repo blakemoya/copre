@@ -13,3 +13,7 @@
 
 * Fixed a Debian compile warning.
 * Typo corrections in documentation.
+
+# copre 0.2.2
+
+* Fixed an RcppArmadillo deprecation error.
